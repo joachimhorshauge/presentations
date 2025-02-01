@@ -265,3 +265,11 @@ joachim@my-pc:~$ chmod +x myscript.sh
 joachim@my-pc:~$ ./myscript.sh
 Hello, World!
 ```
+
+---
+## Installing packages
+- We use a package manager.
+- Example: install a package called `tldr`
+```bash
+joachim@my-pc:~$ sudo apt-get install tldr
+```
