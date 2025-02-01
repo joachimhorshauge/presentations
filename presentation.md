@@ -76,9 +76,192 @@ Which arguments can i use?
 * use the `man` command
     ```man ls ```
 
+---
+
+## Manual
+- Very detailed documentation on what the command does
+
+- I will show an alternative i use daily later.
 
 
 
+---
+# Navigation and Filemangement
+---
+## Where am I?
+Use the `pwd` command i.e *print working directory* 
 
+```bash
+joachim@my-pc:~/repos$ pwd
+/home/joachim/repos
+```
 
+---
 
+## How do I change the working directory?
+Use the `cd` command i.e *change directory* 
+
+```bash
+joachim@my-pc:~/repos$ cd /usr/share
+joachim@my-pc:/usr/share$ pwd
+/usr/share
+```
+---
+## How do I get home?
+Use the `cd` command i.e *change directory* 
+
+```bash
+joachim@my-pc:~/repos$ cd
+joachim@my-pc:~$ pwd
+/home/joachim
+```
+
+---
+## How do I create a file?
+
+```bash
+joachim@lommeulken-vps:~/repos/hello$ ls
+
+```
+
+no files in the directory hello
+
+```bash
+joachim@lommeulken-vps:~/repos/hello$ touch msg
+joachim@lommeulken-vps:~/repos/hello$ ls
+msg
+```
+1 file named msg in the directory hello
+
+--- 
+
+## Creating Directories
+
+Use the `mkdir` command to create a new directory.
+```bash
+joachim@my-pc:~$ mkdir new_folder
+joachim@my-pc:~$ ls
+new_folder
+```
+---
+## Removing Files and Directories
+
+Use the `rm` command to remove files and `rmdir` or `rm -r` to remove directories.
+
+```bash
+joachim@my-pc:~$ rm file.txt
+joachim@my-pc:~$ rmdir empty_folder
+joachim@my-pc:~$ rm -r folder_with_contents
+```
+
+---
+## Viewing Permissions
+
+Use the `ls -l` command to view file permissions.
+```bash
+joachim@my-pc:~$ ls -l
+-rw-r--r-- 1 joachim staff 0 Jan 31 10:00 file.txt
+```
+---
+
+## Changing Permissions
+
+Use the chmod command to change file permissions. 
+```bash
+joachim@my-pc:~$ chmod 755 script.sh
+```
+
+---
+## Environment Variables
+
+Use the printenv command to view all environment variables.
+```bash
+joachim@my-pc:~$ printenv
+HOME=/home/joachim
+PATH=/usr/local/bin:/usr/bin:/bin
+```
+---
+## Setting Environment Variables
+
+Use the export command to set an environment variable.
+```bash
+joachim@my-pc:~$ export MY_VAR="Hello, World!"
+joachim@my-pc:~$ echo $MY_VAR
+Hello, World!
+```
+
+---
+## Piping
+
+Use the | operator to pipe the output of one command as input to another.
+```bash
+joachim@my-pc:~$ ls -l | grep "file"
+```
+---
+## Redirection
+
+Use > to redirect output to a file and < to use a file as input.
+
+```bash
+joachim@my-pc:~$ ls > file_list.txt
+joachim@my-pc:~$ wc -l < file_list.txt
+```
+---
+## Searching within Files
+
+Use the grep command to search for text within files.
+
+```bash
+joachim@my-pc:~$ grep "search_term" file.txt
+```
+---
+## Finding Files
+
+Use the find command to search for files and directories.
+```bash
+joachim@my-pc:~$ find /home/joachim -name "*.txt"
+```
+
+---
+## Viewing Running Processes
+
+Use the ps command to view running processes.
+
+```bash
+joachim@my-pc:~$ ps aux
+```
+---
+## Killing Processes
+
+Use the kill command to terminate a process.
+
+```bash
+joachim@my-pc:~$ kill 1234
+```
+---
+## Create a script file and add commands.
+```bash
+joachim@my-pc:~$ nano myscript.sh
+```
+or 
+
+```bash
+joachim@my-pc:~$ vim myscript.sh
+```
+ 
+then write your script
+
+```bash
+#!/bin/bash
+echo "Hello, World!"
+```
+---
+## Running a Script
+
+Make the script executable and run it`
+
+```bash
+joachim@my-pc:~$ chmod +x myscript.sh
+joachim@my-pc:~$ ./myscript.sh
+Hello, World!
+```
